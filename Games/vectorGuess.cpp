@@ -40,12 +40,21 @@ void play_game()
 			}
 			else if (guess < random)
 			{
-				std::cout << "Too low\n";
+                std::cout << "Too Low\n";
+				if ((random - guesses[guesses.size() - 1]) < (random - guesses[guesses.size() - 2]))
+                {
+                    std::cout << "You are getting close\n";
+                }
+                
 				continue;
 			}
 			else if (guess > random)
 			{
 				std::cout << "Too high\n";
+                if ((guesses[guesses.size() - 1] - random) < (guesses[guesses.size() - 2] - random))
+                {
+                    std::cout << "You are getting close\n";
+                }
 				continue;
 			}
 		}

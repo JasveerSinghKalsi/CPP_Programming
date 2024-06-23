@@ -59,6 +59,7 @@ void play_game()
 	std::cout << "Your guesses were: ";
 	print_array(guesses, guess_count);
 }
+
 int main()
 {
 	srand(time(NULL));
