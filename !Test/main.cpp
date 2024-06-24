@@ -1,16 +1,15 @@
 #include <iostream> //For Inputs and Outputs
-#include <fstream> //For File Functions
-#include <string> //For Strings and Arrays
-#include <array> //For STL Arrays
-#include <vector> //For Vectors
-#include <cmath> //For Mathematics Functions
-#include <cstdlib> //For Dynamic Memory, Random Number
-#include <ctime> //For Date and Time
-#include <limits> //For Arithmetic Characteristics
-#include <climits> //For Defined Constants
-
+double pow(int base, int pow)
+{
+	int pow_num = 1;
+	for (int i = 0; i < pow; i++)
+	{
+		pow_num *= base;
+	}
+	return pow_num;	
+}
 int main()
 {
-	
+	std::cout << pow(3,2) << std::endl;
 	return 0;
 }

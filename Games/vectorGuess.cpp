@@ -1,9 +1,9 @@
 #include <iostream> //For Inputs and Outputs
-#include <fstream> //For File Functions
-#include <string> //For Strings and Arrays
-#include <vector> //For Vectors
-#include <cstdlib> //For Dynamic Memory, Random Number
-#include <ctime> //For Date and Time
+#include <fstream>	//For File Functions
+#include <string>	//For Strings and Arrays
+#include <vector>	//For Vectors
+#include <cstdlib>	//For Dynamic Memory, Random Number
+#include <ctime>	//For Date and Time
 
 void print_vector(std::vector<int> vector)
 {
@@ -18,10 +18,11 @@ void print_vector(std::vector<int> vector)
 	}
 	std::cout << "|\n";
 }
+
 void save_score(int count)
 {
 	std::ifstream input("Best_Score.txt");
-	if(!input.is_open())
+	if (!input.is_open())
 	{
 		std::cout << "Error 404: Best score Found\n";
 		std::cout << ".....Creating new best score\n";
@@ -30,7 +31,7 @@ void save_score(int count)
 		std::cout << "New best score: " << count;
 		return;
 	}
-	
+
 	int best_score;
 	input >> best_score;
 
@@ -75,21 +76,21 @@ void play_game()
 			}
 			else if (guess < random)
 			{
-                std::cout << "Too Low\n";
+				std::cout << "Too Low\n";
 				if ((random - guesses[guesses.size() - 1]) < (random - guesses[guesses.size() - 2]))
-                {
-                    std::cout << "You are getting close\n";
-                }
-                
+				{
+					std::cout << "You are getting close\n";
+				}
+
 				continue;
 			}
 			else if (guess > random)
 			{
 				std::cout << "Too high\n";
-                if ((guesses[guesses.size() - 1] - random) < (guesses[guesses.size() - 2] - random))
-                {
-                    std::cout << "You are getting close\n";
-                }
+				if ((guesses[guesses.size() - 1] - random) < (guesses[guesses.size() - 2] - random))
+				{
+					std::cout << "You are getting close\n";
+				}
 				continue;
 			}
 		}
