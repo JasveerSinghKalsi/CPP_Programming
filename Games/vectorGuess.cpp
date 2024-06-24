@@ -1,8 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <cstdlib>
-#include <ctime>
-#include <limits>
+#include <iostream> //For Inputs and Outputs
+#include <fstream> //For File Functions
+#include <string> //For Strings and Arrays
+#include <vector> //For Vectors
+#include <cstdlib> //For Dynamic Memory, Random Number
+#include <ctime> //For Date and Time
 
 void print_vector(std::vector<int> vector)
 {
@@ -15,7 +16,41 @@ void print_vector(std::vector<int> vector)
 			std::cout << "\t";
 		}
 	}
-	std::cout << "|";
+	std::cout << "|\n";
+}
+void save_score(int count)
+{
+	std::ifstream input("Best_Score.txt");
+	if(!input.is_open())
+	{
+		std::cout << "Error 404: Best score Found\n";
+		std::cout << ".....Creating new best score\n";
+		std::ofstream output("Best_Score.txt");
+		output << count;
+		std::cout << "New best score: " << count;
+		return;
+	}
+	
+	int best_score;
+	input >> best_score;
+
+	std::ofstream output("Best_Score.txt");
+	if (!output.is_open())
+	{
+		std::cout << "Error 404: Not Found\n";
+		return;
+	}
+	if (count < best_score)
+	{
+		output << count;
+		std::cout << "New best score: " << count;
+	}
+	else
+	{
+		output << best_score;
+		std::cout << "Best score not changed.....\n";
+		std::cout << "Best score: " << best_score;
+	}
 }
 
 void play_game()
@@ -66,6 +101,7 @@ void play_game()
 	std::cout << "It took you " << guesses.size() << " attempts to guess the correct number\n";
 	std::cout << "Your guesses were: ";
 	print_vector(guesses);
+	save_score(guesses.size());
 }
 
 int main()
