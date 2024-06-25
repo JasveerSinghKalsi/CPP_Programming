@@ -16,13 +16,13 @@ public:
 	}
 };
 
-void print_vector(std::vector<User> user)
+void print_vector(std::vector<User> &users)
 {
 	std::cout << "|";
-	for (int i = 0; i < user.size(); i++)
+	for (int i = 0; i < users.size(); i++)
 	{
-		std::cout << user[i].first_name << user[i].last_name;
-		if (i < (user.size() - 1))
+		std::cout << users[i].first_name << " " << users[i].last_name;
+		if (i < (users.size() - 1))
 		{
 			std::cout << "\t";
 		}
@@ -38,9 +38,9 @@ int add_user(std::vector<User> &users, User user)
 		{
 			return i;
 		}
-		users.push_back(user);
-		return users.size() - 1;
 	}
+	users.push_back(user);
+	return users.size() - 1;
 	
 }
 
