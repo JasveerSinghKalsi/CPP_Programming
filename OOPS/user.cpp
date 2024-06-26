@@ -25,6 +25,7 @@ void User::set_status(std::string status)
 
 User::User()
 {
+	std::cout << "User created" << std::endl;
 	User::user_count++;
 }
 
@@ -39,6 +40,12 @@ User::~User()
 {
 	User::user_count--;
 }
+
+void User::output()
+{
+	std::cout << "I am a user" << std::endl;
+}
+
 std::ostream &operator<<(std::ostream &output, const User user);
 std::istream &operator>>(std::istream &input, User &user);
 

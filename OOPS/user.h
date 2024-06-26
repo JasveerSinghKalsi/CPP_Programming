@@ -18,6 +18,8 @@ public:
 	User(std::string first_name, std::string last_name, std::string status);
 	~User();
 
+	virtual void output();
+
 	friend std::ostream& operator << (std::ostream& output, const User user);
 	friend std::istream& operator >> (std::istream& input, User &user);
 };
