@@ -8,13 +8,14 @@ struct Rectangle
 };
 namespace utilz
 {
-	double area(double length, double width);
+	//Area function overloading
+	double area(double length, double width); //Area of rectangle
 
-	double area(double side);
+	double area(double side); //Area of square
 
-	double area(Rectangle rect);
+	double area(Rectangle rect); //Area of rectangle using struct
 
-	double pow(double base, int pow = 2);
+	double pow(double base, int pow = 2); //Power function
 }
 
 #endif
