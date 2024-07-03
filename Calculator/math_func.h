@@ -3,82 +3,57 @@
 
 class SimpleCalculator
 {
-private:
-	float sum, difference, product, quotient;
-
-public:
-	float add(float a, float b)
-	{
-		sum = a + b;
-		return sum;
-	}
-	float subtract(float a, float b)
-	{
-		difference = a - b;
-		return difference;
-	}
-	float multiply(float a, float b)
-	{
-		product = a * b;
-		return product;
-	}
-	float divide(float a, float b)
-	{
-		quotient = a / b;
-		return quotient;
-	}
+protected:
+	double sum, difference, product, quotient;
 };
 
 class ScientificCalculator
 {
-private:
-	float power, squareRoot, sine, cosine;
-
-public:
-	float set_power(float a, float b)
-	{
-		power = pow(a, b);
-		return power;
-	}
-	float set_squareRoot(float a)
-	{
-		squareRoot = sqrt(a);
-		return squareRoot;
-	}
-	float set_sine(float a)
-	{
-		sine = sin(a);
-		return sine;
-	}
-	float set_cosine(float a)
-	{
-		cosine = cos(a);
-		return cosine;
-	}
+protected:
+	double power, squareRoot, sine, cosine;
 };
 
 class HybridCalculator : public SimpleCalculator, public ScientificCalculator
 {
 public:
-	void displayCalculator(int input, float a, float b)
+	void add(double a, double b)
 	{
-		switch (input)
-		{
-		case 1:
-			std::cout << "Sum: " << add(a, b) << std::endl;
-			std::cout << "difference: " << subtract(a, b) << std::endl;
-			std::cout << "Multiply: " << multiply(a, b) << std::endl;
-			std::cout << "quotient: " << divide(a, b) << std::endl;
-			break;
-		case 2:
-			std::cout << "Power: " << set_power(a, b) << std::endl;
-			std::cout << "Square Root: " << set_squareRoot(a) << std::endl;
-			std::cout << "Sine: " << set_sine(a) << std::endl;
-			std::cout << "Cosine: " << set_cosine(a) << std::endl;
-			break;
-		default:
-			std::cout << "Invalid Input" << std::endl;
-			break;
-		}
+		sum = a + b;
+		std::cout << "Sum: " << sum << std::endl;
+	}
+	void subtract(double a, double b)
+	{
+		difference = a - b;
+		std::cout << "Difference: " << difference << std::endl;
+	}
+	void multiply(double a, double b)
+	{
+		product = a * b;
+		std::cout << "Product: " << product << std::endl;
+	}
+	void divide(double a, double b)
+	{
+		quotient = a / b;
+		std::cout << "Quotient: " << quotient << std::endl;
+	}
+	void powerOf(double a, double b)
+	{
+		power = pow(a, b);
+		std::cout << "Power: " << power << std::endl;
+	}
+	void squareRootOf(double a)
+	{
+		squareRoot = sqrt(a);
+		std::cout << "Square Root: " << squareRoot << std::endl;
+	}
+	void sineOf(double a)
+	{
+		sine = sin(a);
+		std::cout << "Sine: " << sine << std::endl;
+	}
+	void cosineOf(double a)
+	{
+		cosine = cos(a);
+		std::cout << "Cosine: " << cosine << std::endl;
 	}
 };
