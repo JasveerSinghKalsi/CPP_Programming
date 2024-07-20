@@ -1,5 +1,5 @@
 #include <iostream> //For Inputs and Outputs
-#include <string> //For Strings
+#include <string>	//For Strings
 
 class Employee
 {
@@ -7,20 +7,21 @@ private:
 	int id;
 	float salary;
 	std::string name;
+
 public:
 	static int employeeCount;
 
 	int getId()
-	{ 
-        return id; 
-    }
-    float getSalary()
-	{ 
-        return salary; 
-    }
+	{
+		return id;
+	}
+	float getSalary()
+	{
+		return salary;
+	}
 	std::string getName()
-	{ 
-		return name; 
+	{
+		return name;
 	}
 	void setName(std::string name)
 	{
@@ -53,21 +54,23 @@ class Programmer : public Employee
 {
 private:
 	std::string language;
+
 public:
 	void setLanguage(std::string language)
 	{
 		this->language = language;
 	}
-    void getDetails()
+	void getDetails()
 	{
-        Employee::getDetails();
-        std::cout << "Language: " << language << std::endl;
-    }
-	Programmer(){
+		Employee::getDetails();
+		std::cout << "Language: " << language << std::endl;
+	}
+	Programmer()
+	{
 		Employee();
 		setSalary(25000);
 	}
-	~Programmer(){}
+	~Programmer() {}
 };
 
 int main()
@@ -91,3 +94,4 @@ int main()
 	programmer1.getDetails();
 	return 0;
 }
+
